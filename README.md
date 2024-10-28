@@ -51,7 +51,7 @@ This training module introduces participants to foundational IoT communication p
      - Connect ESP32 to WiFi.
      - Program it to read DHT22 data.
      - Publish data to HiveMQ via MQTT.
-
+     
 #### 6. Network Topologies
    - **Definition**: Arrangement of nodes and connections in a network.
 
