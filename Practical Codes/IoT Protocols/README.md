@@ -2,7 +2,7 @@
 
 This guide demonstrates how to use an ESP32 with a DHT22 sensor to monitor temperature and humidity and transmit sensor data via MQTT protocol to the HiveMQ broker.
 
-   ![DHT22-ESP32 Data Transmit Via MQTT](../images/ESP32_DHT22_HveMQ_Connect.png)
+   ![DHT22-ESP32 Data Transmit Via MQTT](../../images/ESP32_DHT22_HveMQ_Connect.png)
 
 ## Table of Contents
 1. [Overview](#overview)
