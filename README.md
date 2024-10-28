@@ -60,8 +60,6 @@ This training module introduces participants to foundational IoT communication p
         - **Login** (if you already have an account) or **Register** (if you're new) using the provided options.
       - After successful authentication, you'll be redirected to **Select the HiveMQ Cloud plan you need** section.
 
-        ![HiveMQ Cloud Plan Selection](images/image1.png)
-
       - Under the **Serverless** FREE option, click `Create Serverless Cluster` to create a cluster.
       - Once the serverless cluster is created, you'll be redirected to **Your Clusters** section.
 
