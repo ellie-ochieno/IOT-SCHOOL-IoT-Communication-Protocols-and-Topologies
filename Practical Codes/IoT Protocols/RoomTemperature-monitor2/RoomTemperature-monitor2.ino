@@ -6,7 +6,7 @@
 *  # Technologies:
 *     -> Protocol: MQTT
 *     -> Broker: Mosquitto (test.mosquitto.org)
-*  # Activity:
+*  # Activity(Non-encrypted Data Transmission):
 *    -> Measure room temperature and humidity values
 *    -> Send the recorded data to the platform (Mosquitto) via MQTT broker
 *

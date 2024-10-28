@@ -2,13 +2,15 @@
  Connection credentials -------------------------------------------------------------
 */
 //---- WiFi settings
-const char* ssid     = "";
-const char* password = "";
+//const char* ssid     = "ALX The Piano 01";
+//const char* password = "Thepiano01";
+const char* ssid     = "PerisH";
+const char* password = "@Queraina20";
 
 //---- MQTT Broker settings
-const char* mqtt_server = "";
-const char* mqtt_username = "";
-const char* mqtt_password = "";
+const char* mqtt_server = "3a2ed94dc55b4be9b37b7bc35fbc2188.s1.eu.hivemq.cloud";
+const char* mqtt_username = "hivemq.webclient.1730096100031";
+const char* mqtt_password = "2cMa,StOb3KJ:1@.sD0q";
 const int mqtt_port = 8883;
 
 //---- MQTT Pub/Sub Control topics

@@ -6,7 +6,7 @@
 *  # Technologies:
 *     -> Protocol: MQTT
 *     -> Broker: HiveMQ(https://console.hivemq.cloud)
-*  # Activity:
+*  # Activity(Encrypted Data Transmission):
 *    -> Measure room temperature and humidity values
 *    -> Send the recorded data to the platform(HiveMQ) via MQTT broker
 *
@@ -133,7 +133,7 @@ client.loop();                                // Ensure constant processing of M
     Serial.println("Failed to read from DHT sensor!");
     return;
   }
-  
+
   Serial.println("\nTemperature: "+ String(temp) +"\nHumidity: "+ String(humid));
 
   //---- Publish temperature & humidity data to the MQTT topic
