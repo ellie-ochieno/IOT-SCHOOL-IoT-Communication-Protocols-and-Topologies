@@ -22,8 +22,8 @@
 #include <painlessMesh.h>
 #include <DHT.h>
 
-#define MESH_PREFIX "ESP32Mesh"
-#define MESH_PASSWORD "password123"
+#define MESH_PREFIX "ESP32Mesh1"
+#define MESH_PASSWORD "MeshNode1"
 #define MESH_PORT 5555
 // -----------------------------------------------------------------------------
 

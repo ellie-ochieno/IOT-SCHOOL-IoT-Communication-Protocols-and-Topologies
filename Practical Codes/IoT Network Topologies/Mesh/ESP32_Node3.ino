@@ -27,8 +27,8 @@
 #include <PubSubClient.h>
 
 //---- Mesh control handlers
-#define MESH_PREFIX "ESP32Mesh2"
-#define MESH_PASSWORD "MeshNode2"
+#define MESH_PREFIX "ESP32Mesh3"
+#define MESH_PASSWORD "MeshNode3"
 #define MESH_PORT 5555
 // -----------------------------------------------------------------------------
 
