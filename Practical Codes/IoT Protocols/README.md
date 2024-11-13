@@ -1,119 +1,75 @@
-# Practical Example: ESP32 and MQTT Protocol for Sensor Data Transmission
+# AE-ALX-IoT-School
+## Angaza Elimu - ALX IoT School Training
 
-This guide demonstrates how to use an ESP32 with a DHT22 sensor to monitor temperature and humidity and transmit sensor data via MQTT protocol to the HiveMQ broker.
+### Session 16: Data Science and ML for IoT - Part 1
 
-   ![DHT22-ESP32 Data Transmit Via MQTT](../../images/ESP32_DHT22_HveMQ_Connect.png)
-
-## Table of Contents
-1. [Overview](#overview)
-2. [Objective](#objective)
-3. [Required Components](#required-components)
-4. [Instructions](#instructions)
-   - 4.1 [Connecting ESP32 to WiFi](#41-connecting-esp32-to-wifi)
-   - 4.2 [Programming ESP32 to Read DHT22 Data](#42-programming-esp32-to-read-dht22-data)
-   - 4.3 [Publishing Data to HiveMQ via MQTT](#43-publishing-data-to-hivemq-via-mqtt)
-5. [Configuring HiveMQ for ESP32 Connection](#configuring-hivemq-for-esp32-connection)
-   - 5.1 [Creating a HiveMQ Account and Serverless Cluster](#51-creating-a-hivemq-account-and-serverless-cluster)
-   - 5.2 [Cluster Information and MQTT Settings](#52-cluster-information-and-mqtt-settings)
-   - 5.3 [Setting Up Web Client and Topic Subscriptions](#53-setting-up-web-client-and-topic-subscriptions)
+This guide provides a comprehensive setup for IoT beginner students to gather, monitor, and analyze data using ThingSpeak, ESP32, and Google Colab. In this session, you will learn to create a ThingSpeak channel, connect an ESP32 microcontroller, and analyze collected data using Google Colab.
 
 ---
 
-## 1. Overview
-This project focuses on using the MQTT protocol to publish temperature and humidity data from an ESP32 device to the HiveMQ broker, enabling remote data access and monitoring.
+### Table of Contents
+1. [Setting up a ThingSpeak Account and Creating a New Channel](#1-setting-up-a-thingspeak-account-and-creating-a-new-channel)
+2. [Connecting ThingSpeak to ESP32 and Sending DHT22 Data to ThingSpeak](#2-connecting-thingspeak-to-esp32-and-sending-dht22-data-to-thingspeak)
+3. [Setting up Google Colab](#3-setting-up-google-colab)
+4. [Connecting ThingSpeak to Google Colab](#4-connecting-thingspeak-to-google-colab)
+5. [Practical Activity Code Repository](#5-practical-activity-code-repository)
 
-## 2. Objective
-Transmit data from the DHT22 sensor connected to an ESP32 through MQTT to HiveMQ for real-time data monitoring.
+---
 
-## 3. Required Components
-- ESP32 development board
-- DHT22 temperature and humidity sensor
-- MQTT broker account with HiveMQ
+### 1. Setting up a ThingSpeak Account and Creating a New Channel
+ThingSpeak is an IoT analytics platform that allows us to collect, visualize, and analyze live data streams. We'll start by creating a new channel in ThingSpeak.
 
-## 4. Instructions
+- **Step 1**: Create a ThingSpeak account (if you don’t have one) and log in.
+- **Step 2**: Create a new channel for collecting data from the DHT22 sensor.
+  - **Note**: For the DHT22 sensor, we’ll only require **two fields**:
+    - **Field1** for **temperature**
+    - **Field2** for **humidity**
+  - **Important**: Maintain the field names exactly as **temperature** and **humidity** since the provided Python scripts use these specific names as filter keywords when reading from the ThingSpeak API. If you want to use different field names, make sure to update the Python scripts accordingly.
 
-### 4.1 Connecting ESP32 to WiFi
-Set up the ESP32 with WiFi credentials to establish an internet connection, allowing communication with the HiveMQ broker.
-```cpp
-const char* ssid     = "";
-const char* password = "";
-```
+- **Video Guide**: Follow along with this YouTube tutorial to create your ThingSpeak channel: [ThingSpeak Channel Setup](https://youtu.be/8fcQuMRSNBw).
 
-### 4.2 Programming ESP32 to Read DHT22 Data
-Program the ESP32 to read temperature and humidity values from the DHT22 sensor, which will be transmitted to HiveMQ.
-  - Use the source code: `RoomTemperature-monitor`
+---
 
-### 4.3 Publishing Data to HiveMQ via MQTT
-Configure the ESP32 code to publish sensor data to HiveMQ via MQTT under specified topics.
+### 2. Connecting ThingSpeak to ESP32 and Sending DHT22 Data to ThingSpeak
+To connect the ESP32 and send data from the DHT22 sensor to ThingSpeak, we’ll use the **data_collect.ino** Arduino file located in the `data_collect` folder available in the repository. This file configures the ThingSpeak connection details and collects data from the DHT22 sensor.
 
-## 5. Configuring HiveMQ for ESP32 Connection
+- **API Key**: Only the **ThingSpeak Write API Key** is required for sending data to ThingSpeak.
+- **WiFi Credentials**: Ensure to provide the correct **WiFi SSID** and **PASSWORD** for the ESP32 to connect to your network. These details, along with the ThingSpeak connection credentials, are stored in the `secrets.h` file.
+- **ThingSpeak URL**: Keep the **THINGSPEAK_URL** as is to maintain proper connectivity.
 
-### 5.1 Creating a HiveMQ Account and Serverless Cluster
+- **Video Guide**: Watch this YouTube video for a step-by-step guide on connecting ThingSpeak to ESP32 and sending DHT22 data: [ESP32 ThingSpeak Setup](https://youtu.be/f4ps1oCYeKk).
 
-1. Go to [HiveMQ](https://www.hivemq.com/) and click `Start Free`.
-2. Under **Get Started with HiveMQ**, select `HiveMQ Cloud` by clicking the `Sign Up Free Now` button.
-3. Register for a new account or log in if you already have one.
-4. Once authenticated, navigate to the **Select the HiveMQ Cloud plan you need** section.
-5. Under the **Serverless (FREE)** option, click `Create Serverless Cluster` to set up a new cluster.
-6. After creation, go to **Your Clusters**.
+---
 
-   ![Your Clusters Section](../../images/HiveMQ_Clusters.png)
+### 3. Setting up Google Colab
+Google Colab is a free platform for running Python code in the cloud, ideal for data science and machine learning tasks. We’ll use it to analyze data collected in ThingSpeak.
 
-7. Click `Manage Cluster` to access the cluster details.
+- **Step 1**: Open Google Colab (you’ll need a Google account).
+- **Step 2**: Download all Python files provided in the repository and upload them to your Google Colab environment for analysis.
+  - These files help you connect to ThingSpeak, retrieve data, and perform basic data visualization and anomaly detection.
 
-   ![Manage Cluster Section](../../images/HiveMQ_Cluster_Information_Section.png)
+- **Video Guide**: Follow this introductory YouTube video on getting started with Google Colab: [Google Colab Basics](https://youtu.be/RLYoEyIHL6A).
 
-### 5.2 Cluster Information and MQTT Settings
+---
 
-- **Overview**: This section contains important cluster (HiveMQ broker) information and connection parameters.
-  - **Cluster URL**: The MQTT server URL required in the ESP32 code for broker connection.
+### 4. Connecting ThingSpeak to Google Colab
+After setting up ThingSpeak and Google Colab, we need to connect them so that we can fetch data from ThingSpeak directly into Colab for analysis.
 
-    ```cpp
-    const char* mqtt_server = "";
-    ```
+- **Step 1**: Under the ThingSpeak channel you created, locate your **Channel ID** and **Read API Key**.
+- **Step 2**: In the Python scripts, enter your Channel ID and API Key where prompted to establish a connection with ThingSpeak.
+  - This connection will enable real-time data retrieval for further analysis in Google Colab, including data visualization and anomaly detection.
 
-  - **Port 8883**: The secure connection port for MQTT server in the ESP32 code.
+---
 
-### 5.3 Setting Up Web Client and Topic Subscriptions
+### 5. Practical Activity Code Repository
+To access the practical code for this session, refer to the following GitHub repository:
+- [AE-ALX-IoT-School GitHub Repository](https://github.com/ellie-ochieno/AE-ALX-IoT-School)
 
-The Web Client offers a testing environment to verify communication between the ESP32 and HiveMQ.
+This repository contains all necessary files, including:
+  - **data_collect/data_collect.ino**: For collecting data from DHT22 and sending it to ThingSpeak.
+  - **data_collect/secrets.h**: For configuring WiFi and ThingSpeak credentials.
+  - **Python scripts**: For retrieving, analyzing, and visualizing data in Google Colab.
 
-#### Connection Settings
-- Configure `Username` and `Password` required for the connection in the ESP32 code.
-  - **Options**:
-    - Create custom credentials (Username & Password) or
-    - Click `connect with autogenerated credentials` for secure, strong credentials.
-    - Copy and paste these credentials as required in the ESP32 code for:
+---
 
-      ```cpp
-      const char* mqtt_username = "";
-      const char* mqtt_password = "";
-      ```
-
-      is this code snipped inclusion in readme file correct?
-
-   ![Autogenerated Credentials](../../images/HiveMQ_auto_generated_credddentials.png)
-
-    - After entering Username and Password, click `Connect` to establish the broker connection.
-
-   ![Broker Connection](../../images/HiveMQ_broker_connect.png)
-
-#### Topic Subscriptions
-- To set a topic for publishing data from ESP32:
-
-  ```cpp
-  String dht_temp_topic = "dht22/temperature";
-  String dht_humid_topic = "dht22/humidity";
-  ```
-
-  - Enter the defined topic from the ESP32 code in the `TOPIC` field and click `Subscribe`. This action sets HiveMQ to listen for data on the subscribed topics and display it in the **Messages** section when data is received.
-
-   ![Topic Subscription](../../images/HiveMQ_Topics_Subscription.png)
-
-#### Messages
-- The **Messages** section provides real-time visualization of the data sent from the ESP32 to HiveMQ through subscribed topics.
-- It’s also possible to send a message back to the ESP32 via the defined publish topics by clicking `Send Message`.
-
-   ![Messages](../../images/HiveMQ_Messages.png)
-
-This setup enables the ESP32 to publish sensor data via MQTT to HiveMQ, allowing remote monitoring and data interaction.
+Following this guide will help you set up a complete IoT data pipeline, from data collection to visualization and anomaly detection, giving you a hands-on introduction to data science applications in IoT.
